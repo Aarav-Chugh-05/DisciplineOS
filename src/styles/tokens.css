@@ -1,0 +1,42 @@
+/*
+ * DisciplineOS — Color Tokens
+ * Single source of truth for the light/dark palettes.
+ * Tailwind utilities map directly to these custom properties via tailwind.config.js.
+ * NEVER hardcode hex values in components — always use the mapped utilities or
+ * `var(--color-*)` references for SVG strokes/fills.
+ */
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f3edfb;
+  --color-border: #e4d4f7;
+  --color-accent: #7a4bce;
+  --color-accent-hover: #5a2da0;
+  --color-accent-tint: #f3edfb;
+  --color-text-primary: #1a1a2e;
+  --color-text-muted: #6b6b8a;
+
+  /* Heatmap intensity ramp (driven from --color-accent) */
+  --heat-0: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  --heat-1: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  --heat-2: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  --heat-3: color-mix(in srgb, var(--color-accent) 70%, transparent);
+  --heat-4: var(--color-accent);
+}
+
+:root.dark {
+  --color-bg: #000500;
+  --color-surface: #0d0d1a;
+  --color-border: #1e1e38;
+  --color-accent: #473bf0;
+  --color-accent-hover: #6b62f5;
+  --color-accent-tint: #12103a;
+  --color-text-primary: #f0eeff;
+  --color-text-muted: #8b87b8;
+
+  --heat-0: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --heat-1: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  --heat-2: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  --heat-3: color-mix(in srgb, var(--color-accent) 70%, transparent);
+  --heat-4: var(--color-accent);
+}
